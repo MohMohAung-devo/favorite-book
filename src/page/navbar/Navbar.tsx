@@ -2,6 +2,7 @@ import { useRef } from "react";
 import classes from "./Navbar.module.css";
 import { BsList } from "react-icons/bs";
 import { MdClear } from "react-icons/md";
+import { Link } from "react-router-dom";
 const Navbar = () => {
   const menuList = [
     {
@@ -26,7 +27,9 @@ const Navbar = () => {
         <div className={classes.menuContainer} ref={navRef}>
           {menuList.map((item, index) => (
             <div key={index}>
-              <p>{item.name}</p>
+              <Link to={item.link}>
+                <p>{item.name}</p>
+              </Link>
             </div>
           ))}
           <div>
