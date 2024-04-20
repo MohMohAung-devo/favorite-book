@@ -8,7 +8,7 @@ import { useState } from "react";
 const Home = () => {
   const [hoveredIndex, setHoveredIndex] = useState(null);
   const [selectedImage, setSelectedImage] = useState(0);
-  const [activeColor, setActiveColor] = useState(false);
+  // const [activeColor, setActiveColor] = useState(false);
   const bookList = [
     {
       name: "GONE WITH THE WIND",
@@ -36,9 +36,9 @@ const Home = () => {
     { image: Photo4 },
   ];
 
-  const handleHover = (index) => {
+  const handleHover = (index: number) => {
     setHoveredIndex(index);
-    console.log(selectedImage);
+    console.log(setSelectedImage);
   };
 
   return (
@@ -72,7 +72,7 @@ const Home = () => {
                 }`}
                 key={index}
                 onMouseEnter={() => handleHover(index)}
-                onMouseLeave={() => setHoveredIndex(index)}
+                // onMouseLeave={() => setHoveredIndex(index)}
               >
                 <div className={classes.textList}>
                   <p className={classes.nameText}>{item.name}</p>

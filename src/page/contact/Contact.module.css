@@ -1,0 +1,225 @@
+.MainContainer {
+  width: 100%;
+  height: 100%;
+  background-color: #090b0f;
+  color: white;
+}
+
+.ContactContainer {
+  max-width: 1100px;
+  margin: auto;
+  height: 100vh;
+  padding: 0 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  justify-items: center;
+}
+
+.heading {
+  text-align: center;
+  font-size: 3rem;
+}
+.subHeading {
+  text-align: center;
+  font-size: 1.5rem;
+  margin-top: 2rem;
+}
+
+.boxContainer {
+  display: flex;
+  flex-direction: column;
+  height: 60vh;
+  margin-top: 2rem;
+}
+
+.boxHeading {
+  text-align: center;
+  font-size: 2rem;
+}
+.list {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  margin-top: 3rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.listContainer {
+  width: 330px;
+  border: 1px solid gray;
+  height: 35vh;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 2px 2px 2px 2px gray;
+  background-color: #1b1d24;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.text {
+  font-size: 1.5rem;
+}
+
+.footerText {
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+@media screen and (max-width: 1100px) {
+  .heading {
+    font-size: 2rem;
+    margin-top: 1rem;
+  }
+  .subHeading {
+    text-align: center;
+    font-size: 1rem;
+    margin-top: 0rem;
+  }
+  .boxContainer {
+    height: 100%;
+    margin-top: 1rem;
+  }
+
+  .boxHeading {
+    text-align: center;
+    font-size: 1.5rem;
+  }
+
+  .list {
+    grid-template-columns: repeat(2, 2fr);
+    gap: 1rem;
+  }
+
+  .listContainer {
+    width: 350px;
+
+    height: 30vh;
+  }
+
+  .footerText {
+    margin-bottom: 2rem;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .heading {
+    font-size: 2rem;
+    margin-top: 1rem;
+  }
+  .subHeading {
+    text-align: center;
+    font-size: 1rem;
+    margin-top: 0rem;
+  }
+  .boxContainer {
+    height: 100%;
+    margin-top: 1rem;
+  }
+
+  .boxHeading {
+    text-align: center;
+    font-size: 1.5rem;
+  }
+
+  .list {
+    grid-template-columns: repeat(2, 2fr);
+    gap: 1rem;
+  }
+
+  .listContainer {
+    width: 320px;
+
+    height: 30vh;
+  }
+
+  .footerText {
+    margin-bottom: 2rem;
+  }
+}
+
+@media screen and (max-width: 740px) {
+  .ContactContainer {
+    height: 100%;
+  }
+  .heading {
+    font-size: 1.5rem;
+    margin-top: 1.5rem;
+  }
+  .subHeading {
+    text-align: center;
+    font-size: 1rem;
+    margin-top: 0rem;
+  }
+  .boxContainer {
+    height: 100%;
+    margin-top: 1rem;
+  }
+
+  .boxHeading {
+    text-align: center;
+    font-size: 1rem;
+  }
+
+  .list {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 1.5rem;
+  }
+
+  .listContainer {
+    width: 70%;
+    margin: auto;
+    padding: 0 2rem;
+    height: 25vh;
+  }
+
+  .footerText {
+    margin-top: 1.3rem;
+    margin-bottom: 2rem;
+  }
+}
+
+
+@media screen and (max-width: 600px) {
+    .ContactContainer {
+      height: 100%;
+    }
+    .heading {
+      font-size: 1.5rem;
+      margin-top: 1.5rem;
+    }
+    .subHeading {
+      text-align: center;
+      font-size: 1rem;
+      margin-top: 0rem;
+    }
+    .boxContainer {
+      height: 100%;
+      margin-top: 1rem;
+    }
+  
+    .boxHeading {
+      text-align: center;
+      font-size: 1rem;
+    }
+  
+    .list {
+      grid-template-columns: repeat(1, 1fr);
+      gap: 1.5rem;
+    }
+  
+    .listContainer {
+      width: 100%;
+      margin: auto;
+      padding: 0 2rem;
+      height: 25vh;
+    }
+  
+    .footerText {
+      margin-top: 1.3rem;
+      margin-bottom: 2rem;
+    }
+  }
+  
