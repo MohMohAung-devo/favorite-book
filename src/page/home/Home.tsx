@@ -3,11 +3,10 @@ import Photo1 from "../../../public/photo.jpg";
 import Photo2 from "../../../public/photo2.png";
 import Photo3 from "../../../public/photo3.jpg";
 import Photo4 from "../../../public/Photo4.jpg";
-import { motion } from "framer-motion";
 import { useState } from "react";
 
 const Home = () => {
-  const [hoveredIndex, setHoveredIndex] = useState(null);
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
   const [selectedImage, setSelectedImage] = useState(0);
   // const [activeColor, setActiveColor] = useState(false);
   const bookList = [
@@ -39,7 +38,7 @@ const Home = () => {
 
   const handleHover = (index: number) => {
     setHoveredIndex(index);
-    console.log(setSelectedImage);
+    setSelectedImage(index);
   };
 
   return (

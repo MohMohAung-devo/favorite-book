@@ -74,6 +74,8 @@ h1 {
 .text {
   font-size: 18px;
   margin-bottom: 9px;
+  color: #333;
+  font-weight: 700;
 }
 
 .rightConatiner {
@@ -82,12 +84,30 @@ h1 {
 }
 
 .textRight {
-  font-size: 1.5rem;
-  font-size: 18px;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #7a4493;
+  font-weight: 700;
 }
 
 .textList {
   margin-top: 1rem;
+  font-size: 18px;
+  font-weight: 700;
+  color: #333;
+}
+
+.ourText {
+  font-size: 2rem;
+  color: #7a4493;
+  font-weight: 700;
+  margin-top: 1.5rem;
+}
+
+.ourP {
+  font-size: 18px;
+  color: #333;
+  font-weight: 700;
 }
 
 @media screen and (max-width: 750px) {
