@@ -19,28 +19,39 @@
 .heading {
   text-align: center;
   font-size: 3rem;
+  font-weight: 700;
 }
 .subHeading {
   text-align: center;
   font-size: 1.5rem;
-  margin-top: 2rem;
+  margin-top: 1rem;
+  color: #333;
+  font-weight: 700;
 }
 
 .boxContainer {
   display: flex;
   flex-direction: column;
   height: 60vh;
-  margin-top: 2rem;
+  margin-top: 1rem;
+}
+
+h5 {
+  font-size: 2rem;
+  background: linear-gradient(#f5426c, #3250a8);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
 }
 
 .boxHeading {
   text-align: center;
   font-size: 2rem;
+  font-weight: 700;
+  color: #7a4493;
 }
 .list {
   width: 100%;
   height: 100%;
-  display: flex;
   margin-top: 3rem;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -53,7 +64,7 @@
   padding: 1rem;
   border-radius: 10px;
   box-shadow: 2px 2px 2px 2px gray;
-  background-color: #1b1d24;
+  background-color: black;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -61,11 +72,27 @@
 
 .text {
   font-size: 1.5rem;
+  color: #643A7C;
+}
+
+.contactP {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #333;
 }
 
 .footerText {
   text-align: center;
-  font-size: 1.5rem;
+  font-size: 2rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+h6 {
+  font-size: 4rem;
+  background: linear-gradient(#f5426c, #3250a8);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
 }
 
 @media screen and (max-width: 1100px) {
@@ -181,45 +208,43 @@
   }
 }
 
-
 @media screen and (max-width: 600px) {
-    .ContactContainer {
-      height: 100%;
-    }
-    .heading {
-      font-size: 1.5rem;
-      margin-top: 1.5rem;
-    }
-    .subHeading {
-      text-align: center;
-      font-size: 1rem;
-      margin-top: 0rem;
-    }
-    .boxContainer {
-      height: 100%;
-      margin-top: 1rem;
-    }
-  
-    .boxHeading {
-      text-align: center;
-      font-size: 1rem;
-    }
-  
-    .list {
-      grid-template-columns: repeat(1, 1fr);
-      gap: 1.5rem;
-    }
-  
-    .listContainer {
-      width: 100%;
-      margin: auto;
-      padding: 0 2rem;
-      height: 25vh;
-    }
-  
-    .footerText {
-      margin-top: 1.3rem;
-      margin-bottom: 2rem;
-    }
+  .ContactContainer {
+    height: 100%;
   }
-  
+  .heading {
+    font-size: 1.5rem;
+    margin-top: 1.5rem;
+  }
+  .subHeading {
+    text-align: center;
+    font-size: 1rem;
+    margin-top: 0rem;
+  }
+  .boxContainer {
+    height: 100%;
+    margin-top: 1rem;
+  }
+
+  .boxHeading {
+    text-align: center;
+    font-size: 1rem;
+  }
+
+  .list {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 1.5rem;
+  }
+
+  .listContainer {
+    width: 100%;
+    margin: auto;
+    padding: 0 2rem;
+    height: 25vh;
+  }
+
+  .footerText {
+    margin-top: 1.3rem;
+    margin-bottom: 2rem;
+  }
+}
