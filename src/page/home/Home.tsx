@@ -3,6 +3,7 @@ import Photo1 from "../../../public/photo.jpg";
 import Photo2 from "../../../public/photo2.png";
 import Photo3 from "../../../public/photo3.jpg";
 import Photo4 from "../../../public/Photo4.jpg";
+import { motion } from "framer-motion";
 import { useState } from "react";
 
 const Home = () => {
@@ -75,8 +76,8 @@ const Home = () => {
                 // onMouseLeave={() => setHoveredIndex(index)}
               >
                 <div className={classes.textList}>
-                  <p className={classes.nameText}>{item.name}</p>
-                  <p>{item.description}</p>
+                  <h4 className={classes.nameText}>{item.name}</h4>
+                  <p className={classes.textDescription}>{item.description}</p>
                 </div>
               </div>
             ))}

@@ -22,7 +22,7 @@ const Navbar = () => {
   return (
     <div className={classes.MainContainer}>
       <div className={classes.Container}>
-        <h1>MohMohAung</h1>
+        <p className="text-2xl">MohMohAung</p>
 
         <div className={classes.menuContainer} ref={navRef}>
           {menuList.map((item, index) => (

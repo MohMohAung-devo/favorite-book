@@ -3,6 +3,7 @@
   height: 100%;
   background-color: #090b0f;
   color: white;
+  font-family: sans-serif;
 }
 
 .Container {
@@ -23,6 +24,14 @@
 }
 .pText {
   font-size: 1.5rem;
+  color: #333;
+}
+
+h4 {
+  background: linear-gradient(#f5426c, #3250a8);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  /* color: #f14e6c; */
 }
 
 .bookContainer {
@@ -45,6 +54,7 @@
 .nameList {
   width: 45%;
   position: relative;
+  font-weight: 700;
 
   height: 90%;
   gap: 1rem;
@@ -61,13 +71,14 @@
   height: 155px;
   background-color: black;
   padding: 1.5rem;
-  border: 1px solid gray;
+  border: 1px solid #333;
   border-radius: 20px;
   display: flex;
   justify-content: center;
   justify-items: center;
   align-items: center;
   text-align: center;
+  color: white;
 }
 
 .book:hover {
@@ -86,6 +97,11 @@
 .nameText {
   font-size: 1.2rem;
   margin-bottom: 7px;
+}
+
+.textDescription {
+  font-size: 16px;
+  font-weight: 600;
 }
 
 @media screen and (max-width: 1100px) {

@@ -2,6 +2,7 @@
   width: 100%;
   height: 100%;
   background-color: #090b0f;
+  /* background: linear-gradient(to right, #090b0f, #f5426c, #090b0f); */
 }
 
 .About {
@@ -37,11 +38,11 @@
   margin-top: -3rem;
 }
 
-.heading {
+h1 {
   font-size: 4rem;
-  color: linear-gradient(to right, #ff7e5f, #feb47b);
+  background: linear-gradient(#f5426c, #3250a8);
+  -webkit-text-fill-color: transparent;
   -webkit-background-clip: text;
-  background-clip: text;
 }
 
 .subHeading {
