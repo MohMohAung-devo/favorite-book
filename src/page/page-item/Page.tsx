@@ -102,10 +102,18 @@ const Page = () => {
                   </div>
                 </div>
 
-                <div>
-                  {" "}
-                  <p>Comment</p>
-                  <p>{comment}</p>
+                <div className={classes.comment}>
+                  <div className={classes.commentList}>
+                    {" "}
+                    <p>Comments</p>
+                    <p>{comment}</p>
+                  </div>
+                  <div>
+                    <form>
+                      <input placeholder="Write Something...." />
+                      <button>Submit</button>
+                    </form>
+                  </div>
                 </div>
               </div>
             </div>

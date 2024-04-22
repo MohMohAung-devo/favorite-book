@@ -76,3 +76,12 @@
   cursor: pointer;
   position: absolute;
 }
+
+.commentList {
+  display: flex;
+  gap: 1rem;
+  cursor: pointer;
+}
+.comment {
+  display: flex;
+}
