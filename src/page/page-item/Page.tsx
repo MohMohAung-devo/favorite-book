@@ -4,6 +4,7 @@ import { FaRegFaceLaughBeam } from "react-icons/fa6";
 import { FaRegFaceKissWinkHeart } from "react-icons/fa6";
 import { FaRegFaceGrinTongueSquint } from "react-icons/fa6";
 import { FaRegFaceSadCry } from "react-icons/fa6";
+import Photo from "../../../public/photo5.webp";
 
 const Page = () => {
   const [showIcon, setShowIcon] = useState(false);
@@ -11,22 +12,19 @@ const Page = () => {
   const [selectedLike, setSelectedLike] = useState<number | null>(null);
   const [saveIcon, setSaveIcon] = useState<number | null>(null);
 
+  const [comment, setComment] = useState(0);
   const booklist = [
     {
+      image: Photo,
       name: "Defininte Guide with Javascript",
     },
     {
+      image: Photo,
       name: "Defininte Guide with Javascript",
     },
-    {
-      name: "Defininte Guide with Javascript",
-    },
-    {
-      name: "Defininte Guide with Javascript",
-    },
-    {
-      name: "Defininte Guide with Javascript",
-    },
+    { image: Photo, name: "Defininte Guide with Javascript" },
+    { image: Photo, name: "Defininte Guide with Javascript" },
+    { image: Photo, name: "Defininte Guide with Javascript" },
   ];
 
   const icons = [
@@ -45,10 +43,11 @@ const Page = () => {
   const handleIcon = (index: number) => {
     setSelectedIcon(index);
     setShowIcon(false);
-    setSaveIcon(selectedIcon);
+    setSaveIcon([...selectedIcon, ...selectedLike]);
     console.log("selectedIcon", selectedIcon);
     console.log("saveIcons", saveIcon);
   };
+
   return (
     <div className={classes.PageContainer}>
       <div className={classes.Container}>
@@ -58,19 +57,34 @@ const Page = () => {
           {booklist.map((item, index) => (
             <div key={index}>
               <div className={classes.book}>
-                <p>{item.name}</p>
+                <img
+                  src={item.image}
+                  alt=""
+                  style={{
+                    width: "100%",
+                    height: "200px",
+                    borderRadius: "10px",
+                  }}
+                />
+                <p className={classes.name}>{item.name}</p>
               </div>
               <div className={classes.bookComment}>
                 <div className={classes.likeButton}>
-                  {" "}
-                  <p style={{ color: "yellow" }}>
-                    {selectedIcon !== null && selectedLike === index
-                      ? icons[selectedIcon].icons
-                      : ""}
-                  </p>
-                  <p onClick={() => handleShow(index)} key={index}>
-                    Like
-                  </p>
+                  <div className={classes.likeList}>
+                    {" "}
+                    <p
+                      onClick={() => handleShow(index)}
+                      key={index}
+                      className={classes.like}
+                    >
+                      Like
+                    </p>
+                    <p style={{ color: "yellow" }}>
+                      {selectedIcon !== null && selectedLike === index
+                        ? icons[selectedIcon].icons
+                        : ""}
+                    </p>
+                  </div>
                   <div>
                     {" "}
                     {showIcon && selectedLike === index ? (
@@ -87,7 +101,10 @@ const Page = () => {
                   </div>
                 </div>
 
-                <p>Comment</p>
+                <div>
+                  {" "}
+                  <p>Comment</p>
+                </div>
               </div>
             </div>
           ))}
