@@ -43,9 +43,10 @@ const Page = () => {
   const handleIcon = (index: number) => {
     setSelectedIcon(index);
     setShowIcon(false);
-    setSaveIcon([...selectedIcon, ...selectedLike]);
+    setSaveIcon(saveIcon);
     console.log("selectedIcon", selectedIcon);
     console.log("saveIcons", saveIcon);
+    console.log(setComment);
   };
 
   return (
@@ -104,6 +105,7 @@ const Page = () => {
                 <div>
                   {" "}
                   <p>Comment</p>
+                  <p>{comment}</p>
                 </div>
               </div>
             </div>
