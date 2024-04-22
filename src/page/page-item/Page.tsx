@@ -7,48 +7,47 @@ import { FaRegFaceSadCry } from "react-icons/fa6";
 
 const Page = () => {
   const [showIcon, setShowIcon] = useState(false);
-  const [selectedIcon, setSelectedIcon] = useState(0);
-  const [iconList, setIconList] = useState(0);
+  const [selectedIcon, setSelectedIcon] = useState<number | null>(null);
+  const [selectedLike, setSelectedLike] = useState<number | null>(null);
+  const [saveIcon, setSaveIcon] = useState<number | null>(null);
+
   const booklist = [
     {
-      id: 1,
       name: "Defininte Guide with Javascript",
     },
     {
-      id: 2,
       name: "Defininte Guide with Javascript",
     },
     {
-      id: 3,
       name: "Defininte Guide with Javascript",
     },
     {
-      id: 4,
       name: "Defininte Guide with Javascript",
     },
     {
-      id: 5,
       name: "Defininte Guide with Javascript",
     },
   ];
 
   const icons = [
-    { id: 1, icons: <FaRegFaceLaughBeam /> },
-    { id: 2, icons: <FaRegFaceKissWinkHeart /> },
-    { id: 3, icons: <FaRegFaceGrinTongueSquint /> },
-    { id: 4, icons: <FaRegFaceSadCry /> },
+    { icons: <FaRegFaceLaughBeam /> },
+    { icons: <FaRegFaceKissWinkHeart /> },
+    { icons: <FaRegFaceGrinTongueSquint /> },
+    { icons: <FaRegFaceSadCry /> },
   ];
 
-  const handleShow = (id: number) => {
+  const handleShow = (index: number) => {
     setShowIcon(true);
-    setSelectedIcon(id);
-    console.log(id);
+    setSelectedLike(index);
+    console.log("setSelectedLike", index);
   };
 
-  const handleIcon = (id: number) => {
-    setIconList(id);
-    setSelectedIcon(id);
+  const handleIcon = (index: number) => {
+    setSelectedIcon(index);
     setShowIcon(false);
+    setSaveIcon(selectedIcon);
+    console.log("selectedIcon", selectedIcon);
+    console.log("saveIcons", saveIcon);
   };
   return (
     <div className={classes.PageContainer}>
@@ -65,17 +64,19 @@ const Page = () => {
                 <div className={classes.likeButton}>
                   {" "}
                   <p style={{ color: "yellow" }}>
-                    {iconList ? icons[selectedIcon].icons : ""}
+                    {selectedIcon !== null && selectedLike === index
+                      ? icons[selectedIcon].icons
+                      : ""}
                   </p>
-                  <p onClick={() => handleShow(item.id)} key={index}>
+                  <p onClick={() => handleShow(index)} key={index}>
                     Like
                   </p>
                   <div>
                     {" "}
-                    {showIcon && selectedIcon === item.id ? (
+                    {showIcon && selectedLike === index ? (
                       <div className={classes.icons}>
-                        {icons.map((item, index) => (
-                          <div key={index} onClick={() => handleIcon(item.id)}>
+                        {icons.map((item, idx) => (
+                          <div key={idx} onClick={() => handleIcon(idx)}>
                             {item.icons}
                           </div>
                         ))}
