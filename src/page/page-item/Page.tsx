@@ -13,6 +13,8 @@ const Page = () => {
   const [saveIcon, setSaveIcon] = useState<number | null>(null);
 
   const [comment, setComment] = useState(0);
+  const [showComment, setShowComment] = useState(false);
+  const [commentWord, setCommentWord] = useState([]);
   const booklist = [
     {
       image: Photo,
@@ -47,6 +49,19 @@ const Page = () => {
     console.log("selectedIcon", selectedIcon);
     console.log("saveIcons", saveIcon);
     console.log(setComment);
+  };
+
+  const handleShowComment = () => {
+    setShowComment(true);
+  };
+
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setCommentWord(event.target.value);
+  };
+
+  const handleSubmit = () => {
+    setCommentWord([...commentWord]);
+    // setComment(commentWord + 1);
   };
 
   return (
@@ -104,15 +119,42 @@ const Page = () => {
 
                 <div className={classes.comment}>
                   <div className={classes.commentList}>
-                    {" "}
-                    <p>Comments</p>
-                    <p>{comment}</p>
-                  </div>
-                  <div>
-                    <form>
-                      <input placeholder="Write Something...." />
-                      <button>Submit</button>
-                    </form>
+                    <div
+                      style={{
+                        display: "flex",
+                        justifyContent: "flex-end",
+                        gap: "1rem",
+                      }}
+                      onClick={handleShowComment}
+                    >
+                      {" "}
+                      <p style={{ color: "#7a4493" }}>Comments</p>
+                      <p style={{ color: "#333" }}>{comment}</p>
+                    </div>{" "}
+                    {showComment ? (
+                      <div className={classes.formContainer}>
+                        <div>
+                          {/* <p>{commentWord.map((item) => (
+                            <div>
+
+                            </div>
+                          ))}</p> */}
+
+                          <p>{comment}</p>
+                          <input
+                            placeholder="Write Something...."
+                            type="text"
+                            onChange={handleChange}
+                            style={{ color: "black" }}
+                          />
+                          <button type="submit" onClick={handleSubmit}>
+                            Submit
+                          </button>
+                        </div>
+                      </div>
+                    ) : (
+                      ""
+                    )}
                   </div>
                 </div>
               </div>
