@@ -140,7 +140,7 @@ const Page = () => {
                             </div>
                           ))}</p> */}
 
-                          <p>{comment}</p>
+                          <p>{commentWord}</p>
                           <input
                             placeholder="Write Something...."
                             type="text"
