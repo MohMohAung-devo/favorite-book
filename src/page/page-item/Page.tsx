@@ -7,6 +7,11 @@ import { FaRegFaceSadCry } from "react-icons/fa6";
 import Photo from "../../../public/photo5.webp";
 
 const Page = () => {
+  const commentList = [
+    { name: "Hi" },
+    { name: "Hello" },
+    { name: "How are you" },
+  ];
   const [showIcon, setShowIcon] = useState(false);
   const [selectedIcon, setSelectedIcon] = useState<number | null>(null);
   const [selectedLike, setSelectedLike] = useState<number | null>(null);
@@ -14,7 +19,7 @@ const Page = () => {
 
   const [comment, setComment] = useState(0);
   const [showComment, setShowComment] = useState(false);
-  const [commentWord, setCommentWord] = useState<{ name: string }[]>([]);
+  const [commentWord, setCommentWord] = useState(commentList);
   const [selectedComment, setSelectedComment] = useState<number | null>(null);
   const [addNewComment, setAddNewComment] = useState("");
   const booklist = [
@@ -31,12 +36,6 @@ const Page = () => {
     { image: Photo, name: "Defininte Guide with Javascript" },
   ];
 
-  const commentList = [
-    { name: "Hi" },
-    { name: "Hello" },
-    { name: "How are you" },
-  ];
-
   useEffect(() => {
     setComment(comment);
   }, []);
@@ -48,9 +47,10 @@ const Page = () => {
       setCommentWord([...commentWord, { name: addNewComment }]);
     }
 
-    setCommentWord(commentList);
+    setCommentWord(commentWord);
+    setAddNewComment("");
     console.log(addNewComment);
-    console.log(commentList);
+    console.log("commentWord", commentWord);
   };
 
   const icons = [
@@ -164,7 +164,7 @@ const Page = () => {
                       <div className={classes.formContainer}>
                         <div>
                           <div>
-                            {commentList.map((list, ind) => (
+                            {commentWord.map((list, ind) => (
                               <p key={ind}>{list.name}</p>
                             ))}
                           </div>
@@ -175,7 +175,12 @@ const Page = () => {
                               type="text"
                               value={addNewComment}
                               onChange={(e) => setAddNewComment(e.target.value)}
-                              style={{ color: "black" }}
+                              style={{
+                                color: "black",
+                                width: "120px",
+                                borderRadius: "10px",
+                                padding: "4px",
+                              }}
                             />
                             <button type="submit" onClick={newComment}>
                               Submit
