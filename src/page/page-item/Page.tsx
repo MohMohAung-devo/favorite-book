@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import classes from "./Page.module.css";
 import { FaRegFaceLaughBeam } from "react-icons/fa6";
 import { FaRegFaceKissWinkHeart } from "react-icons/fa6";
@@ -15,6 +15,7 @@ const Page = () => {
   const [comment, setComment] = useState(0);
   const [showComment, setShowComment] = useState(false);
   const [commentWord, setCommentWord] = useState([]);
+  const [selectedComment, setSelectedComment] = useState<number | null>(null);
   const booklist = [
     {
       image: Photo,
@@ -28,6 +29,18 @@ const Page = () => {
     { image: Photo, name: "Defininte Guide with Javascript" },
     { image: Photo, name: "Defininte Guide with Javascript" },
   ];
+
+  const commentList = [
+    { name: "Hi" },
+    { name: "Hello" },
+    { name: "How are you" },
+  ];
+
+  useEffect(() => {
+    setComment(comment);
+  }, []);
+
+  const commentLength = commentList.length;
 
   const icons = [
     { icons: <FaRegFaceLaughBeam /> },
@@ -48,11 +61,15 @@ const Page = () => {
     setSaveIcon(saveIcon);
     console.log("selectedIcon", selectedIcon);
     console.log("saveIcons", saveIcon);
-    console.log(setComment);
   };
 
-  const handleShowComment = () => {
+  const handleShowComment = (ind: number) => {
+    setSelectedComment(ind);
     setShowComment(true);
+    if (showComment === true) {
+      return setShowComment(false);
+    }
+    setComment(comment);
   };
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -125,25 +142,25 @@ const Page = () => {
                         justifyContent: "flex-end",
                         gap: "1rem",
                       }}
-                      onClick={handleShowComment}
+                      key={index}
+                      onClick={() => handleShowComment(index)}
                     >
                       {" "}
                       <p style={{ color: "#7a4493" }}>Comments</p>
-                      <p style={{ color: "#333" }}>{comment}</p>
+                      <p style={{ color: "#333" }}>{commentLength}</p>
                     </div>{" "}
-                    {showComment ? (
+                    {showComment && selectedComment === index ? (
                       <div className={classes.formContainer}>
                         <div>
-                          {/* <p>{commentWord.map((item) => (
-                            <div>
-
-                            </div>
-                          ))}</p> */}
-
-                          <p>{commentWord}</p>
+                          <div>
+                            {commentList.map((list, ind) => (
+                              <p key={ind}>{list.name}</p>
+                            ))}
+                          </div>
                           <input
                             placeholder="Write Something...."
                             type="text"
+                            value={commentWord}
                             onChange={handleChange}
                             style={{ color: "black" }}
                           />
