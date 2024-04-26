@@ -14,8 +14,9 @@ const Page = () => {
 
   const [comment, setComment] = useState(0);
   const [showComment, setShowComment] = useState(false);
-  const [commentWord, setCommentWord] = useState([]);
+  const [commentWord, setCommentWord] = useState<{ name: string }[]>([]);
   const [selectedComment, setSelectedComment] = useState<number | null>(null);
+  const [addNewComment, setAddNewComment] = useState("");
   const booklist = [
     {
       image: Photo,
@@ -41,6 +42,16 @@ const Page = () => {
   }, []);
 
   const commentLength = commentList.length;
+
+  const newComment = () => {
+    if (addNewComment.trim() !== "") {
+      setCommentWord([...commentWord, { name: addNewComment }]);
+    }
+
+    setCommentWord(commentList);
+    console.log(addNewComment);
+    console.log(commentList);
+  };
 
   const icons = [
     { icons: <FaRegFaceLaughBeam /> },
@@ -72,14 +83,14 @@ const Page = () => {
     setComment(comment);
   };
 
-  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setCommentWord(event.target.value);
-  };
+  // const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+  //   setCommentWord(event.target.value);
+  // };
 
-  const handleSubmit = () => {
-    setCommentWord([...commentWord]);
-    // setComment(commentWord + 1);
-  };
+  // const handleSubmit = () => {
+  //   setCommentWord([...commentWord]);
+  //    setComment(commentWord + 1);
+  // };
 
   return (
     <div className={classes.PageContainer}>
@@ -157,16 +168,19 @@ const Page = () => {
                               <p key={ind}>{list.name}</p>
                             ))}
                           </div>
-                          <input
-                            placeholder="Write Something...."
-                            type="text"
-                            value={commentWord}
-                            onChange={handleChange}
-                            style={{ color: "black" }}
-                          />
-                          <button type="submit" onClick={handleSubmit}>
-                            Submit
-                          </button>
+                          <div className={classes.addComment}>
+                            {" "}
+                            <input
+                              placeholder="Write Something...."
+                              type="text"
+                              value={addNewComment}
+                              onChange={(e) => setAddNewComment(e.target.value)}
+                              style={{ color: "black" }}
+                            />
+                            <button type="submit" onClick={newComment}>
+                              Submit
+                            </button>
+                          </div>
                         </div>
                       </div>
                     ) : (
