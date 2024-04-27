@@ -174,7 +174,7 @@ const Page = () => {
                             />
                             <button
                               type="submit"
-                              onClick={() => newComment(index)}
+                              onClick={ newComment}
                             >
                               Submit
                             </button>
