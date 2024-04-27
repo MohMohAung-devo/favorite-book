@@ -40,14 +40,13 @@ const Page = () => {
     setComment(comment);
   }, []);
 
-  const commentLength = commentList.length;
+  const commentLength = commentWord.length;
 
   const newComment = () => {
-    if (addNewComment.trim() !== "") {
-      setCommentWord([...commentWord, { name: addNewComment }]);
-    }
-
-    setCommentWord(commentWord);
+    // if (addNewComment.trim() !== "") {
+    //   setCommentWord([...commentWord, { name: addNewComment }]);
+    // }
+    setCommentWord([...commentWord, { name: addNewComment }]);
     setAddNewComment("");
     console.log(addNewComment);
     console.log("commentWord", commentWord);
@@ -82,15 +81,6 @@ const Page = () => {
     }
     setComment(comment);
   };
-
-  // const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-  //   setCommentWord(event.target.value);
-  // };
-
-  // const handleSubmit = () => {
-  //   setCommentWord([...commentWord]);
-  //    setComment(commentWord + 1);
-  // };
 
   return (
     <div className={classes.PageContainer}>
@@ -182,7 +172,10 @@ const Page = () => {
                                 padding: "4px",
                               }}
                             />
-                            <button type="submit" onClick={newComment}>
+                            <button
+                              type="submit"
+                              onClick={() => newComment(index)}
+                            >
                               Submit
                             </button>
                           </div>
