@@ -89,7 +89,7 @@ const Page = () => {
 
         <div className={classes.bookList}>
           {booklist.map((item, index) => (
-            <div key={index}>
+            <div key={index} className={classes.bookListContainer}>
               <div className={classes.book}>
                 <img
                   src={item.image}

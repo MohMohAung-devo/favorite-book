@@ -36,11 +36,12 @@
   outline: none;
   color: white;
   visibility: hidden;
+  /* color: black; */
 
   opacity: 1;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 900px) {
   .icon {
     visibility: visible;
     opacity: 1;

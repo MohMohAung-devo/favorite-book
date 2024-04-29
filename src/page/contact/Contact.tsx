@@ -1,4 +1,7 @@
 import classes from "./Contact.module.css";
+import { FaFacebookF } from "react-icons/fa6";
+import { FaTwitter } from "react-icons/fa6";
+import { FaSquareInstagram } from "react-icons/fa6";
 
 const Contact = () => {
   return (
@@ -38,6 +41,17 @@ const Contact = () => {
             <div className={classes.listContainer}>
               <div>
                 <p className={classes.text}>Social Media -</p>
+                <div className={classes.iconList}>
+                  <div className={classes.icons}>
+                    <FaFacebookF color="#643a7c" size={20} />
+                  </div>
+                  <div className={classes.icons}>
+                    <FaTwitter color="#643a7c" size={20} />
+                  </div>
+                  <div className={classes.icons}>
+                    <FaSquareInstagram color="#643a7c" size={20} />
+                  </div>
+                </div>
               </div>
 
               <div>

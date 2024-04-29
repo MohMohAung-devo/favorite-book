@@ -59,8 +59,9 @@ const Home = () => {
                     : book[selectedImage].image
                 }
                 alt=""
-                width="100%"
-                style={{ height: "670px", borderRadius: "20px" }}
+                // width="100%"
+                // style={{ height: "670px", borderRadius: "20px" }}
+                className={classes.img}
               />
             </div>
           </div>
