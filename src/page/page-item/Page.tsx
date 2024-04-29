@@ -94,11 +94,12 @@ const Page = () => {
                 <img
                   src={item.image}
                   alt=""
-                  style={{
-                    width: "100%",
-                    height: "200px",
-                    borderRadius: "10px",
-                  }}
+                  // style={{
+                  //   width: "100%",
+                  //   height: "200px",
+                  //   borderRadius: "10px",
+                  // }}
+                  className={classes.Image}
                 />
                 <p className={classes.name}>{item.name}</p>
               </div>
@@ -172,10 +173,7 @@ const Page = () => {
                                 padding: "4px",
                               }}
                             />
-                            <button
-                              type="submit"
-                              onClick={ newComment}
-                            >
+                            <button type="submit" onClick={newComment}>
                               Submit
                             </button>
                           </div>

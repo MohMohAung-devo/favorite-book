@@ -39,3 +39,10 @@
   justify-content: center;
   justify-items: center;
 }
+
+.name {
+  color: #7a4493;
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}

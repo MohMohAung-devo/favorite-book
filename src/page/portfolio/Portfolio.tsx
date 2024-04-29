@@ -26,7 +26,7 @@ export const Portfolio = () => {
         <div className={classes.Container}>
           {portFolioList.map((item) => (
             <div className={classes.portfolioList}>
-              <p>Name: {item.name}</p>
+              <p className={classes.name}>Name: {item.name}</p>
               <p>{item.description}</p>
             </div>
           ))}
