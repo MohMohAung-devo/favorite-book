@@ -36,9 +36,13 @@
   outline: none;
   color: white;
   visibility: hidden;
-  /* color: black; */
-
   opacity: 1;
+}
+.colorActive {
+  width: 10px;
+  border-bottom: 3px solid #f5426c;
+  display: flex;
+  justify-content: center;
 }
 
 @media screen and (max-width: 900px) {
