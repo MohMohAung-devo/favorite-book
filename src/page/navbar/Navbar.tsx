@@ -32,7 +32,7 @@ const Navbar = () => {
         <div className={classes.menuContainer} ref={navRef}>
           {menuList.map((item, index) => (
             <div key={index}>
-              <Link to={item.link}>
+              <Link to={item.link} key={index}>
                 <p
                   key={index}
                   className={`

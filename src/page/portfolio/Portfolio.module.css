@@ -25,8 +25,8 @@
   height: 70vh;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 1rem;
-  margin-top: 1rem;
+  column-gap: 1rem;
+  /* margin-top: 1rem; */
 }
 
 .portfolioList {
@@ -37,14 +37,31 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  justify-items: center;
+  justify-items: start;
+  align-items: center;
+  align-content: center;
+  cursor: pointer;
+}
+
+.portfolioList:hover {
+  background-color: gray;
 }
 
 .name {
+  /* color: #7a4493; */
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+.spanName {
   color: #7a4493;
   font-size: 22px;
   font-weight: 600;
   margin-bottom: 10px;
+}
+
+.spanBiography {
+  color: #7a4493;
 }
 
 @media screen and (max-width: 1100px) {

@@ -1,5 +1,5 @@
 import classes from "./Portfolio.module.css";
-
+import { FaArrowRight } from "react-icons/fa6";
 export const Portfolio = () => {
   const portFolioList = [
     {
@@ -26,8 +26,16 @@ export const Portfolio = () => {
         <div className={classes.Container}>
           {portFolioList.map((item) => (
             <div className={classes.portfolioList}>
-              <p className={classes.name}>Author: {item.name}</p>
-              <p>{item.description}</p>
+              <p className={classes.name}>
+                Author : <span className={classes.spanName}>{item.name}</span>{" "}
+              </p>
+              <p>
+                Biography -{" "}
+                <span className={classes.spanBiography}>
+                  {item.description}
+                </span>
+              </p>
+              <FaArrowRight size={25} style={{ marginTop: "2rem" }} />
             </div>
           ))}
         </div>

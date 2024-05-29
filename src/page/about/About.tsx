@@ -14,7 +14,9 @@ const About = () => {
               </div>
 
               <div className={classes.icons}>
-                <FaArrowRight size={40} style={{}} />
+                <a href="/page">
+                  <FaArrowRight size={40} style={{}} />
+                </a>
               </div>
             </div>
           </div>
