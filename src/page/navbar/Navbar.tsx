@@ -36,7 +36,6 @@ const Navbar = () => {
                 <p
                   key={index}
                   className={`
-              
                   ${activeColor === index ? classes.colorActive : ""}`}
                   onClick={() => handleActive(index)}
                 >

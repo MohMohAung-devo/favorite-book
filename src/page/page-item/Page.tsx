@@ -12,10 +12,11 @@ const Page = () => {
     { name: "Hello" },
     { name: "How are you" },
   ];
-  const [showIcon, setShowIcon] = useState(false);
-  const [selectedIcon, setSelectedIcon] = useState<number | null>(null);
+  const [showIcon, setShowIcon] = useState<number | null>(null);
+  const [selectedIcon, setSelectedIcon] = useState<{ [key: number]: number }>(
+    {}
+  );
   const [selectedLike, setSelectedLike] = useState<number | null>(null);
-  const [saveIcon, setSaveIcon] = useState<number | null>(null);
 
   const [comment, setComment] = useState(0);
   const [showComment, setShowComment] = useState(false);
@@ -26,14 +27,33 @@ const Page = () => {
     {
       image: Photo,
       name: "Defininte Guide with Javascript",
+      like: "Like",
+      comment: "Comment",
     },
     {
       image: Photo,
       name: "Defininte Guide with Javascript",
+      like: "Like",
+      comment: "Comment",
     },
-    { image: Photo, name: "Defininte Guide with Javascript" },
-    { image: Photo, name: "Defininte Guide with Javascript" },
-    { image: Photo, name: "Defininte Guide with Javascript" },
+    {
+      image: Photo,
+      name: "Defininte Guide with Javascript",
+      like: "Like",
+      comment: "Comment",
+    },
+    {
+      image: Photo,
+      name: "Defininte Guide with Javascript",
+      like: "Like",
+      comment: "Comment",
+    },
+    {
+      image: Photo,
+      name: "Defininte Guide with Javascript",
+      like: "Like",
+      comment: "Comment",
+    },
   ];
 
   useEffect(() => {
@@ -43,9 +63,6 @@ const Page = () => {
   const commentLength = commentWord.length;
 
   const newComment = () => {
-    // if (addNewComment.trim() !== "") {
-    //   setCommentWord([...commentWord, { name: addNewComment }]);
-    // }
     setCommentWord([...commentWord, { name: addNewComment }]);
     setAddNewComment("");
     console.log(addNewComment);
@@ -60,17 +77,15 @@ const Page = () => {
   ];
 
   const handleShow = (index: number) => {
-    setShowIcon(true);
+    setShowIcon(index);
     setSelectedLike(index);
     console.log("setSelectedLike", index);
+    console.log(selectedLike);
   };
 
-  const handleIcon = (index: number) => {
-    setSelectedIcon(index);
-    setShowIcon(false);
-    setSaveIcon(saveIcon);
-    console.log("selectedIcon", selectedIcon);
-    console.log("saveIcons", saveIcon);
+  const handleIcon = (bookIndex: number, iconIndex: number) => {
+    setSelectedIcon({ ...selectedIcon, [bookIndex]: iconIndex });
+    setShowIcon(null);
   };
 
   const handleShowComment = (ind: number) => {
@@ -91,16 +106,7 @@ const Page = () => {
           {booklist.map((item, index) => (
             <div key={index} className={classes.bookListContainer}>
               <div className={classes.book}>
-                <img
-                  src={item.image}
-                  alt=""
-                  // style={{
-                  //   width: "100%",
-                  //   height: "200px",
-                  //   borderRadius: "10px",
-                  // }}
-                  className={classes.Image}
-                />
+                <img src={item.image} alt="" className={classes.Image} />
                 <p className={classes.name}>{item.name}</p>
               </div>
               <div className={classes.bookComment}>
@@ -112,26 +118,23 @@ const Page = () => {
                       key={index}
                       className={classes.like}
                     >
-                      Like
+                      {item.like}
                     </p>
                     <p style={{ color: "yellow" }}>
-                      {selectedIcon !== null && selectedLike === index
-                        ? icons[selectedIcon].icons
+                      {selectedIcon[index] !== undefined
+                        ? icons[selectedIcon[index]].icons
                         : ""}
                     </p>
                   </div>
                   <div>
-                    {" "}
-                    {showIcon && selectedLike === index ? (
+                    {showIcon === index && (
                       <div className={classes.icons}>
                         {icons.map((item, idx) => (
-                          <div key={idx} onClick={() => handleIcon(idx)}>
+                          <div key={idx} onClick={() => handleIcon(index, idx)}>
                             {item.icons}
                           </div>
                         ))}
                       </div>
-                    ) : (
-                      ""
                     )}
                   </div>
                 </div>
@@ -148,15 +151,21 @@ const Page = () => {
                       onClick={() => handleShowComment(index)}
                     >
                       {" "}
-                      <p style={{ color: "#7a4493" }}>Comments</p>
-                      <p style={{ color: "#333" }}>{commentLength}</p>
+                      <p style={{ color: "#7a4493" }}>{item.comment}</p>
                     </div>{" "}
+                    <div>
+                      <p style={{ color: "#333" }}>{commentLength}</p>
+                    </div>
                     {showComment && selectedComment === index ? (
                       <div className={classes.formContainer}>
                         <div>
                           <div>
                             {commentWord.map((list, ind) => (
-                              <p key={ind}>{list.name}</p>
+                              <div>
+                                {" "}
+                                <p key={ind}>{list.name}</p>
+                                {/* <button>Reply</button> */}
+                              </div>
                             ))}
                           </div>
                           <div className={classes.addComment}>
