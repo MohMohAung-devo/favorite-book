@@ -61,6 +61,7 @@ export const Portfolio = () => {
 
   const handleDragStart = (index: number) => {
     setDraw(index);
+    console.log(draw, setItem);
   };
 
   return (
@@ -73,7 +74,7 @@ export const Portfolio = () => {
               key={index}
               className={classes.portfolioList}
               // draggable
-              // onDragStart={() => handlerDragStart(index)}
+              onDragStart={() => handleDragStart(index)}
               // onDragOver={handleDragOver}
               // onDrop={(event) => handleDrop(event, index)}
             >
