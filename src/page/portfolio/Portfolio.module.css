@@ -18,20 +18,19 @@
 }
 
 .heading {
-  margin-top: -2.5rem;
+  margin-top: 2.5rem;
 }
 .Container {
   width: 100%;
-  height: 70vh;
+  height: 100vh;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   column-gap: 1rem;
-  
 }
 
 .portfolioList {
   width: 100%;
-  height: 25vh;
+  height: 35vh;
   border: 1px solid gray;
   border-radius: 10px;
   display: flex;

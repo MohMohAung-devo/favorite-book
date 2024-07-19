@@ -1,36 +1,46 @@
 import { useState } from "react";
 import classes from "./Portfolio.module.css";
 import { FaArrowRight } from "react-icons/fa6";
+import Photo6 from "../../../public/photo6.jpeg";
+import Photo7 from "../../../public/photo7.jpeg";
+import Photo8 from "../../../public/photo8.jpeg";
 export const Portfolio = () => {
   const [draw, setDraw] = useState<number | null>(null);
 
   interface itemType {
+    image: string;
     name: string;
     description: string;
   }
 
   const portFolioList: itemType[] = [
     {
+      image: Photo6,
       name: "ကျာနယ်ကျော်မမလေး",
       description: "Lore ispaum dolor adfadf llafdf  hello i am mohmohaung",
     },
     {
-      name: "ကျာနယ်",
+      image: Photo7,
+      name: "တက္ကသိုလ်ဘုန်းနိုင်",
       description: "Lore ispaum dolor adfadf llafdf  hello i am mohmohaung",
     },
     {
+      image: Photo8,
+      name: "ထင်းလင်း",
+      description: "Lore ispaum dolor adfadf llafdf  hello i am mohmohaung",
+    },
+    {
+      image: Photo6,
       name: "ကျာနယ်ကျော်မမလေး",
       description: "Lore ispaum dolor adfadf llafdf  hello i am mohmohaung",
     },
     {
+      image: Photo6,
       name: "ကျာနယ်ကျော်မမလေး",
       description: "Lore ispaum dolor adfadf llafdf  hello i am mohmohaung",
     },
     {
-      name: "ကျာနယ်ကျော်မမလေး",
-      description: "Lore ispaum dolor adfadf llafdf  hello i am mohmohaung",
-    },
-    {
+      image: Photo6,
       name: "ကျာနယ်ကျော်မမလေး",
       description: "Lore ispaum dolor adfadf llafdf  hello i am mohmohaung",
     },
@@ -78,6 +88,11 @@ export const Portfolio = () => {
               // onDragOver={handleDragOver}
               // onDrop={(event) => handleDrop(event, index)}
             >
+              <img
+                src={item.image}
+                alt=""
+                style={{ width: "50%", height: "150px" }}
+              />
               <p className={classes.name}>
                 Author : <span className={classes.spanName}>{item.name}</span>{" "}
               </p>
@@ -96,3 +111,7 @@ export const Portfolio = () => {
   );
 };
 export default Portfolio;
+
+
+//400453992
+//772356963
